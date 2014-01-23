@@ -1,3 +1,26 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [JavaScript Style Guide for Gang of Five](#javascript-style-guide-for-gang-of-five)
+	- [Naming Conventions](#naming-conventions)
+	- [var](#var)
+	- [Objects](#objects)
+	- [Arrays](#arrays)
+	- [Strings](#strings)
+	- [Functions](#functions)
+	- [Properties](#properties)
+	- [Modifying prototypes of builtin objects](#modifying-prototypes-of-builtin-objects)
+	- [Conditional Expressions & Equality](#conditional-expressions--equality)
+	- [Code Formatting](#code-formatting)
+		- [Array and Objects initializers](#array-and-objects-initializers)
+		- [Function arguments](#function-arguments)
+		- [Blocks](#blocks)
+		- [Whitespace](#whitespace)
+		- [Commas](#commas)
+		- [Semicolons](#semicolons)
+		- [Comments](#comments)
+			- [Types and Tags](#types-and-tags)
+	- [Parting Words](#parting-words)
+	- 
 # JavaScript Style Guide for *Gang of Five*
 
 Based on [Google's](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
