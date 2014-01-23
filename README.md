@@ -32,7 +32,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
    - `favorite-movies.js`
  - Be descriptive with your naming.
 
-    ~~~
+    ~~~javascript
     // bad
     function q() {
         // ...stuff...
@@ -46,7 +46,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 
  - Use `camelCase` when naming objects, functions, and instances.
 
-    ~~~
+    ~~~javascript
     // bad
     var OBJEcttsssss = {};
     var this_is_my_object = {};
@@ -65,7 +65,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 
  - Use `PascalCase` when naming constructors or classes.
 
-    ~~~
+    ~~~javascript
     // bad
     function user(options) {
         this.name = options.name;
@@ -87,7 +87,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 
  - Use a leading underscore _ when naming private properties.
 
-    ~~~
+    ~~~javascript
     // bad
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
@@ -99,7 +99,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
  - Use `NAMES_LIKE_THIS` for constants.
  - Prefix jQuery object variables with a `$`.
 
-    ~~~
+    ~~~javascript
     // bad
     var sidebar = $('.sidebar');
 
@@ -110,7 +110,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 ## var
  - Always declare with var to avoid accidentally polluting the global scope.
 
-    ~~~
+    ~~~javascript
     // bad
     pet = 'dog';
 
@@ -121,7 +121,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
  - Use one var declaration for multiple variables and declare each
    variable on a newline.
 
-    ~~~
+    ~~~javascript
     // bad
     var items = getItems();
     var pet = 'dog';
@@ -133,10 +133,10 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
         special = false;
     ~~~
 
-- Declare unassigned variables last. This is helpful when later on you might
-  need to assign a variable depending on one of the previous assigned variables.
+ - Declare unassigned variables last. This is helpful when later on you might
+   need to assign a variable depending on one of the previous assigned variables.
 
-    ~~~
+    ~~~javascript
     // bad
     var i, length, special,
         items = getItems(),
@@ -159,7 +159,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 ## Objects
  - Use the literal syntax for object creation:
 
-    ~~~
+    ~~~javascript
     // bad
     var item = new Object();
 
@@ -170,7 +170,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 ## Arrays
  - Use the literal syntax for array creation:
 
-    ~~~
+    ~~~javascript
     // bad
     var items = new Array();
 
@@ -180,7 +180,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 
  - Always use normal `for` loops when using arrays, do not use `for-in` loops.
 
-    ~~~
+    ~~~javascript
     // bad
     var i;
     for (i in arr) {
@@ -198,7 +198,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 ## Strings
  - Use single quotes for strings
 
-    ~~~
+    ~~~javascript
     // good
     var color = 'red';
 
@@ -212,7 +212,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 ## Functions
  - Function expressions
 
-    ~~~
+    ~~~javascript
     // anonymous function expression
     var anonymous = function() {
         return true;
@@ -232,7 +232,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
  - Never declare a function in a non-function block (if, while, etc).
    Assign the function to a variable instead.
 
-    ~~~
+    ~~~javascript
     // bad
     if (currentUser) {
         function test() {
@@ -255,7 +255,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
  - Never name a parameter `arguments`, this will take precedence over
    the `arguments`object that is given to every function scope.
 
-    ~~~
+    ~~~javascript
     // bad
     function nope(name, options, arguments) {
         // ...stuff...
@@ -270,7 +270,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 ## Properties
  - Use dot notation when accessing properties.
 
-    ~~~
+    ~~~javascript
     // bad
     console.log(user['name']);
     // good
@@ -279,7 +279,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 
  - Use subscript notation `[]` when accessing properties with a variable.
 
-    ~~~
+    ~~~javascript
     var attr = 'name';
     console.log(user[attr]);
     ~~~
@@ -291,7 +291,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
  - Use `===` and `!==` over `==` and `!=`.
  - Use shortcuts.
 
-    ~~~
+    ~~~javascript
     // bad
     if (name !== '') {
         // ...stuff...
@@ -313,7 +313,6 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
     }
     ~~~
 
-
 ## Code Formatting
  - Soft line length limit: 80.
  - Hard line length limit: 120.
@@ -321,9 +320,11 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 ### Array and Objects initializers
  - Single-line array and object initializers are allowed when they fit on a line.
 
-    ~~~
-    var arr = [1, 2, 3];  // No space after [ or before ].
-    var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.
+    ~~~javascript
+    // No space after [ or before ].
+    var arr = [1, 2, 3];
+    // No space after { or before }.
+    var obj = {a: 1, b: 2, c: 3};
     ~~~
 
 ### Function arguments
@@ -331,7 +332,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
 doing so would exceed the 80-column limit, the arguments must be line-wrapped
 in a readable way. Both of the examples below are acceptable:
 
-    ~~~
+    ~~~javascript
     // Four-space, wrap at 80.  Works with very long function names, survives
     // renaming without reindenting, low on space.
     var doThingThatIsVeryDifficultToExplain = function(
@@ -354,7 +355,7 @@ in a readable way. Both of the examples below are acceptable:
 ### Blocks
  - Use braces with all multi-line blocks.
 
-    ~~~
+    ~~~javascript
     // bad
     if (test)
         return false;
@@ -379,26 +380,26 @@ in a readable way. Both of the examples below are acceptable:
 ### Whitespace
  - Use soft tabs set to 4 spaces
 
-    ~~~
-        // bad
-        function() {
-        ∙∙var name;
-        }
+    ~~~javascript
+    // bad
+    function() {
+    ∙∙var name;
+    }
 
-        // bad
-        function() {
-        ∙var name;
-        }
+    // bad
+    function() {
+    ∙var name;
+    }
 
-        // good
-        function() {
-        ∙∙∙∙var name;
-        }
+    // good
+    function() {
+    ∙∙∙∙var name;
+    }
     ~~~
 
  - Place 1 space before the leading brace.
 
-    ~~~
+    ~~~javascript
     // bad
     function test(){
         console.log('test');
@@ -423,7 +424,7 @@ in a readable way. Both of the examples below are acceptable:
     ~~~
 
  - Set off operators with spaces.
-    ~~~
+    ~~~javascript
     // bad
     var x=y+5;
 
@@ -436,7 +437,7 @@ in a readable way. Both of the examples below are acceptable:
 ### Commas
  - Leading commas: **No**.
 
-    ~~~
+    ~~~javascript
     // bad
     var one
       , two
@@ -450,7 +451,7 @@ in a readable way. Both of the examples below are acceptable:
 
  - Additional trailing comma: **No**.
 
-    ~~~
+    ~~~javascript
     // bad
     var names = [
         'Jeff',
@@ -470,7 +471,7 @@ in a readable way. Both of the examples below are acceptable:
   - **Yes**. Relying on implicit insertion can cause subtle, hard to debug problems.
     Don't do it. You're better than that.
 
-    ~~~
+    ~~~javascript
     // bad
     (function() {
         var name = 'Skywalker'
@@ -488,7 +489,7 @@ in a readable way. Both of the examples below are acceptable:
  - Use `/** ... */` for multiline comments. Include a description, specify
    types and values for all parameters and return values.
 
-    ~~~
+    ~~~javascript
     // bad
     // make() returns a new element
     // based on the passed in tag name
@@ -517,7 +518,7 @@ in a readable way. Both of the examples below are acceptable:
  - Use // for single line comments. Place single line comments on a newline
    above the subject of the comment. Put an empty line before the comment.
 
-    ~~~
+    ~~~javascript
     // bad
     var active = true;  // is current tab
 
