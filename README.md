@@ -20,7 +20,7 @@
 		- [Comments](#comments)
 			- [Types and Tags](#types-and-tags)
 	- [Parting Words](#parting-words)
-	- 
+
 # JavaScript Style Guide for *Gang of Five*
 
 Based on [Google's](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
