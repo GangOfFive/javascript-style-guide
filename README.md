@@ -421,6 +421,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
     ~~~
 
  - Separar los operadores con un espacio:
+
     ~~~javascript
     // No recomendado
     var x=y+5;
@@ -432,7 +433,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
  - Colocar una línea vacía al final del archivo.
 
 ### Comas
-
+ - No colocar las comas antes cuando se listan variables.
     ~~~javascript
     // No recomendado
     var one
@@ -548,9 +549,9 @@ y [Airbnb](https://github.com/airbnb/javascript/).
    - `TODO -- need to implement`
 
 #### Tipos y Tags
- - Solo es necesario utilizar comentarios JSDoc para funciones y cosntructores.
+ - Solo es necesario utilizar comentarios JSDoc para funciones y constructores.
 
- - Para los tipos y tags, refiérase a:
+ - Para los tipos y tags, referirse a:
    - [JSDoc Tag Reference](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#JSDoc_Tag_Reference)
    - [JavaScript Types](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#JsTypes)
 
