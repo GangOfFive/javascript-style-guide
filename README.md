@@ -1,3 +1,24 @@
+**Tabla de Contenidos**
+
+- [Estándar de JavaScript para Gang of Five](#est%C3%A1ndar-de-javascript-para-gang-of-five)
+	- [Nombres](#nombres)
+	- [var](#var)
+	- [Objetos](#objetos)
+	- [Arreglos](#arreglos)
+	- [Strings](#strings)
+	- [Funciones](#funciones)
+	- [Propiedades](#propiedades)
+	- [Modificar prototipos de objetos del lenguaje](#modificar-prototipos-de-objetos-del-lenguaje)
+	- [Expresiones condicionales y comparaciones](#expresiones-condicionales-y-comparaciones)
+	- [Formato del código](#formato-del-c%C3%B3digo)
+		- [Inicializar objetos y arreglos](#inicializar-objetos-y-arreglos)
+		- [Argumentos de funciones](#argumentos-de-funciones)
+		- [Bloques](#bloques)
+		- [Espacios](#espacios)
+		- [Comas](#comas)
+		- [Punto y coma](#punto-y-coma)
+		- [Comentarios](#comentarios)
+			- [Tipos y Tags](#tipos-y-tags)
 
 # Estándar de JavaScript para *Gang of Five*
 
