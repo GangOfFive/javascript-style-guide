@@ -1,53 +1,31 @@
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [JavaScript Style Guide for Gang of Five](#javascript-style-guide-for-gang-of-five)
-	- [Naming Conventions](#naming-conventions)
-	- [var](#var)
-	- [Objects](#objects)
-	- [Arrays](#arrays)
-	- [Strings](#strings)
-	- [Functions](#functions)
-	- [Properties](#properties)
-	- [Modifying prototypes of builtin objects](#modifying-prototypes-of-builtin-objects)
-	- [Conditional Expressions & Equality](#conditional-expressions--equality)
-	- [Code Formatting](#code-formatting)
-		- [Array and Objects initializers](#array-and-objects-initializers)
-		- [Function arguments](#function-arguments)
-		- [Blocks](#blocks)
-		- [Whitespace](#whitespace)
-		- [Commas](#commas)
-		- [Semicolons](#semicolons)
-		- [Comments](#comments)
-			- [Types and Tags](#types-and-tags)
-	- [Parting Words](#parting-words)
+# Estándar de JavaScript para *Gang of Five*
 
-# JavaScript Style Guide for *Gang of Five*
+Basado en los estándares de [Google](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+y [Airbnb](https://github.com/airbnb/javascript/).
 
-Based on [Google's](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style guides.
-
-## Naming Conventions
- - JavaScript files should be named like this:
+## Nombres
+ - Los archivos de JavaScript se deberán nombrar de la siguiente manera:
    - `elephant.js`
    - `favorite-movies.js`
- - Be descriptive with your naming.
+ - Ser descriptivo con los nombres.
 
     ~~~javascript
-    // bad
+    // No recomendado
     function q() {
         // ...stuff...
     }
 
-    // good
+    // Recomendado
     function query() {
         // ..stuff..
     }
     ~~~
 
- - Use `camelCase` when naming objects, functions, and instances.
+ - Utilizar `camelCase` para nombrar objetos, funciones, e instancias.
 
     ~~~javascript
-    // bad
+    // No recomendado
     var OBJEcttsssss = {};
     var this_is_my_object = {};
     function c() {};
@@ -55,7 +33,7 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
         name: 'Bob Parr'
     });
 
-    // good
+    // Recomendado
     var thisIsMyObject = {};
     function thisIsMyFunction() {};
     var user = new User({
@@ -63,92 +41,90 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
     });
     ~~~
 
- - Use `PascalCase` when naming constructors or classes.
+ - Utilizar `PascalCase` para nombrar constructores y clases.
 
     ~~~javascript
-    // bad
+    // No recomendado
     function user(options) {
         this.name = options.name;
     }
 
-    var bad = new user({
+    var No recomendado = new user({
         name: 'nope'
     });
 
-    // good
+    // Recomendado
     function User(options) {
         this.name = options.name;
     }
 
-    var good = new User({
+    var Recomendado = new User({
         name: 'yup'
     });
     ~~~
 
- - Use a leading underscore _ when naming private properties.
+ - Anteponer un guión bajo cuando se desean nombrar propiedades privadas.
 
     ~~~javascript
-    // bad
+    // No recomendado
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
 
-    // good
+    // Recomendado
     this._firstName = 'Panda';
     ~~~
 
- - Use `NAMES_LIKE_THIS` for constants.
- - Prefix jQuery object variables with a `$`.
+ - Utilizar el siguiente formato para las constantes: `EARTH_GRAVITY`.
+ - Anteponer `$` a las variables que sean objetos de *jQuery*.
 
     ~~~javascript
-    // bad
+    // No recomendado
     var sidebar = $('.sidebar');
 
-    // good
+    // Recomendado
     var $sidebar = $('.sidebar');
     ~~~
 
 ## var
- - Always declare with var to avoid accidentally polluting the global scope.
+ - Siempre utilizar `var` al declarar variables.
 
     ~~~javascript
-    // bad
+    // No recomendado
     pet = 'dog';
 
-    // good
+    // Recomendado
     var pet = 'dog';
     ~~~
 
- - Use one var declaration for multiple variables and declare each
-   variable on a newline.
+ - Utilizar solo un `bar` para declarar múltiples variables, una en cada línea.
 
     ~~~javascript
-    // bad
+    // No recomendado
     var items = getItems();
     var pet = 'dog';
     var special = false;
 
-    // good
+    // Recomendado
     var items = getItems(),
         pet = 'dog',
         special = false;
     ~~~
 
- - Declare unassigned variables last. This is helpful when later on you might
-   need to assign a variable depending on one of the previous assigned variables.
+ - Declarar las variables a las que no se le asignará un valor immediatamente de últimas.
 
     ~~~javascript
-    // bad
+    // No recomendado
     var i, length, special,
         items = getItems(),
         pet = 'dog';
 
-    // bad
+    // No recomendado
     var i, items = getItems(),
         special,
         pet = 'dog',
         length;
 
-    // good
+    // Recomendado
     var items = getItems(),
         pet = 'dog',
         special,
@@ -156,37 +132,37 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
         i;
     ~~~
 
-## Objects
- - Use the literal syntax for object creation:
+## Objetos
+ - Utilizar el siguiente sintaxis para declarar objetos:
 
     ~~~javascript
-    // bad
+    // No recomendado
     var item = new Object();
 
-    // good
+    // Recomendado
     var item = {};
     ~~~
 
-## Arrays
- - Use the literal syntax for array creation:
+## Arreglos
+ - Utilizar el siguiente sintaxis para declarar arreglos:
 
     ~~~javascript
-    // bad
+    // No recomendado
     var items = new Array();
 
-    // good
+    // Recomendado
     var items = [];
     ~~~
 
- - Always use normal `for` loops when using arrays, do not use `for-in` loops.
+ - Siempre utilizar ciclos `for` cuando se utilizan arreglos, no utilizar ciclos `for-in`.
 
     ~~~javascript
-    // bad
+    // No recomendado
     var i;
     for (i in arr) {
         console.log(arr[i]);
     }
-    // good
+    // Recomendado
     var i,
         l = arr.length;
 
@@ -196,21 +172,21 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
     ~~~
 
 ## Strings
- - Use single quotes for strings
+ - Utilizar comillas sencillas para los strings.
 
     ~~~javascript
-    // good
+    // Recomendado
     var color = 'red';
 
-    // bad
+    // No recomendado
     var color = "red";
     ~~~
 
-- Strings longer than 80 characters should be written across
-  multiple lines using string concatenation.
+- Si un string mide más de 80 caracteres, se debe escribir en múltiples líneas, utilizando
+  concatenación.
 
-## Functions
- - Function expressions
+## Funciones
+ - Expresiones de funciones
 
     ~~~javascript
     // anonymous function expression
@@ -229,18 +205,18 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
     })();
     ~~~
 
- - Never declare a function in a non-function block (if, while, etc).
-   Assign the function to a variable instead.
+ - Nunca declarar una función en un bloque no sea una función (`if`, `while`, etc).
+   En vez, asignar una función a una variable.
 
     ~~~javascript
-    // bad
+    // No recomendado
     if (currentUser) {
         function test() {
             console.log('No');
         }
     }
 
-    // good
+    // Recomendado
     var test;
     if (currentUser) {
         test = function test() {
@@ -249,76 +225,76 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
     }
     ~~~
 
- - Nested functions can be very useful, for example in the creation of continuations and
-   for the task of hiding helper functions. Feel free to use them.
+ - Las funciones anidades pueden ser muy útiles. Utilizarlas cuando tenga sentido hacerlo.
 
- - Never name a parameter `arguments`, this will take precedence over
-   the `arguments`object that is given to every function scope.
+ - Nunca nombrar un parámetro `arguments`, ya que éste tomará precedencia sobre
+   el objeto `arguments` que se coloca en el contexto de cada función.
 
     ~~~javascript
-    // bad
+    // No recomendado
     function nope(name, options, arguments) {
         // ...stuff...
     }
 
-    // good
+    // Recomendado
     function yup(name, options, args) {
         // ...stuff...
     }
     ~~~
 
-## Properties
- - Use dot notation when accessing properties.
+## Propiedades
+ - Utilizar la notación de `.` para acceder a propiedades de un objeto.
 
     ~~~javascript
-    // bad
+    // No recomendado
     console.log(user['name']);
-    // good
+    // Recomendado
     console.log(user.name);
     ~~~
 
- - Use subscript notation `[]` when accessing properties with a variable.
+ - Utilizar la notación de `[]` cuando se utiliza una variable para acceder a
+   una propiedad de un objeto.
 
     ~~~javascript
     var attr = 'name';
     console.log(user[attr]);
     ~~~
 
-## Modifying prototypes of builtin objects
- - Avoid modifying builtins like `Object.prototype` and `Array.prototype`.
+## Modificar prototipos de objetos del lenguaje
+ - Evitar modificar prototipos como `Object.prototype` y `Array.prototype`.
 
-## Conditional Expressions & Equality
- - Use `===` and `!==` over `==` and `!=`.
- - Use shortcuts.
+## Expresiones condicionales y comparaciones
+ - Utilizar `===` y `!==` en vez de `==` y `!=`.
+ - Utilizar atajos:
 
     ~~~javascript
-    // bad
+    // No recomendado
     if (name !== '') {
         // ...stuff...
     }
 
-    // good
+    // Recomendado
     if (name) {
         // ...stuff...
     }
 
-    // bad
+    // No recomendado
     if (collection.length > 0) {
         // ...stuff...
     }
 
-    // good
+    // Recomendado
     if (collection.length) {
         // ...stuff...
     }
     ~~~
 
-## Code Formatting
- - Soft line length limit: 80.
- - Hard line length limit: 120.
+## Formato del código
+ - Longitud máxima de líneas: `80`. Si no es posible utilizar menos de 80 carácteres, intentar
+   al menos utilizar menos de `120`.
 
-### Array and Objects initializers
- - Single-line array and object initializers are allowed when they fit on a line.
+### Inicializar objetos y arreglos
+ - Se permite colocarlos en la misma línea si no son muy largos.
 
     ~~~javascript
     // No space after [ or before ].
@@ -327,10 +303,10 @@ and [Airbnb's](https://github.com/airbnb/javascript/) excellent JavaScript style
     var obj = {a: 1, b: 2, c: 3};
     ~~~
 
-### Function arguments
- - When possible, all function arguments should be listed on the same line. If
-doing so would exceed the 80-column limit, the arguments must be line-wrapped
-in a readable way. Both of the examples below are acceptable:
+### Argumentos de funciones
+ - Siempre que sea posible, los argumentos de una función se deberán listar en la misma
+   línea. Si se excede el límte de 80 caracteres, los argumentos se deberán formatear
+   de tal manera que sean legibles. Los siguientes ejemplos son aceptables:
 
     ~~~javascript
     // Four-space, wrap at 80.  Works with very long function names, survives
@@ -352,114 +328,113 @@ in a readable way. Both of the examples below are acceptable:
     }
     ~~~
 
-### Blocks
- - Use braces with all multi-line blocks.
+### Bloques
+ - Siempre utilizar corchetes para los bloques de una sola línea:
 
     ~~~javascript
-    // bad
+    // No recomendado
     if (test)
         return false;
 
-    // good
+    // No recomendado
     if (test) return false;
 
-    // good
+    // Recomendado
     if (test) {
         return false;
     }
 
-    // bad
+    // No recomendado
     function() { return false; }
 
-    // good
+    // Recomendado
     function() {
         return false;
     }
     ~~~
 
-### Whitespace
- - Use soft tabs set to 4 spaces
+### Espacios
+ - Indentar con `4` espacios.
 
     ~~~javascript
-    // bad
+    // No recomendado
     function() {
     ∙∙var name;
     }
 
-    // bad
+    // No recomendado
     function() {
     ∙var name;
     }
 
-    // good
+    // Recomendado
     function() {
     ∙∙∙∙var name;
     }
     ~~~
 
- - Place 1 space before the leading brace.
+ - Colocar un espacio antes del primer corchete:
 
     ~~~javascript
-    // bad
+    // No recomendado
     function test(){
         console.log('test');
     }
 
-    // good
+    // Recomendado
     function test() {
         console.log('test');
     }
 
-    // bad
+    // No recomendado
     dog.set('attr',{
         age: '1 year',
         breed: 'Schnauzer'
     });
 
-    // good
+    // Recomendado
     dog.set('attr', {
         age: '1 year',
         breed: 'Schnauzer'
     });
     ~~~
 
- - Set off operators with spaces.
+ - Separar los operadores con un espacio:
     ~~~javascript
-    // bad
+    // No recomendado
     var x=y+5;
 
-    // good
+    // Recomendado
     var x = y + 5;
     ~~~
 
- - Place an empty newline at the end of the file.
+ - Colocar una línea vacía al final del archivo.
 
-### Commas
- - Leading commas: **No**.
+### Comas
 
     ~~~javascript
-    // bad
+    // No recomendado
     var one
       , two
       , three;
 
-    // good
+    // Recomendado
     var one,
         two,
         three;
     ~~~
 
- - Additional trailing comma: **No**.
+ - Coma adicional al final: **No**.
 
     ~~~javascript
-    // bad
+    // No recomendado
     var names = [
         'Jeff',
         'Sam',
         'Fred',
     ];
 
-    // good
+    // Recomendado
     var names = [
         'Jeff',
         'Sam',
@@ -467,30 +442,29 @@ in a readable way. Both of the examples below are acceptable:
     ];
     ~~~
 
-### Semicolons
-  - **Yes**. Relying on implicit insertion can cause subtle, hard to debug problems.
-    Don't do it. You're better than that.
+### Punto y coma
+  - **Si**. Evitar omitir puntos y comas.
 
     ~~~javascript
-    // bad
+    // No recomendado
     (function() {
         var name = 'Skywalker'
         return name
     })()
 
-    // good
+    // Recomendado
     (function() {
         var name = 'Skywalker';
         return name;
     })();
     ~~~
 
-### Comments
- - Use `/** ... */` for multiline comments. Include a description, specify
-   types and values for all parameters and return values.
+### Comentarios
+ - Utilizar `/** ... */` para comentarios multilínea. Incluir una descripción, especificar
+   tipos y valores para los parámetros y lo que se retorne.
 
     ~~~javascript
-    // bad
+    // No recomendado
     // make() returns a new element
     // based on the passed in tag name
     //
@@ -501,7 +475,7 @@ in a readable way. Both of the examples below are acceptable:
         return element;
     }
 
-    // good
+    // Recomendado
     /**
      * make() returns a new element
      * based on the passed in tag name
@@ -515,18 +489,19 @@ in a readable way. Both of the examples below are acceptable:
     }
     ~~~
 
- - Use // for single line comments. Place single line comments on a newline
-   above the subject of the comment. Put an empty line before the comment.
+ - Utilizar `//` para comentarios de una línea.
+   Colocar el comentario en una línea sobre el código que se describe.
+   Colocar una línea vacía antes del comentario.
 
     ~~~javascript
-    // bad
+    // No recomendado
     var active = true;  // is current tab
 
-    // good
+    // Recomendado
     // is current tab
     var active = true;
 
-    // bad
+    // No recomendado
     function getType() {
         console.log('fetching type...');
         // set the default type to 'no type'
@@ -535,7 +510,7 @@ in a readable way. Both of the examples below are acceptable:
         return type;
     }
 
-    // good
+    // Recomendado
     function getType() {
         console.log('fetching type...');
 
@@ -546,41 +521,21 @@ in a readable way. Both of the examples below are acceptable:
     }
     ~~~
 
- - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly
-   understand if you're pointing out a problem that needs to be revisited, or if
-   you're suggesting a solution to the problem that needs to be implemented. These
-   are different than regular comments because they are actionable. The actions
-   are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+ - Colocar `FIXME` o `TODO` antes de los comentarios para indicar si hay un problema
+   que se necesita solucionar o una solución que aún se debe implementar.
+   - `FIXME -- need to figure this out`
+   - `TODO -- need to implement`
 
-#### Types and Tags
- - It is only mandatory to add JSDoc comments to functions and constructors.
+#### Tipos y Tags
+ - Solo es necesario utilizar comentarios JSDoc para funciones y cosntructores.
 
- - For types and tags please refer to:
+ - Para los tipos y tags, refiérase a:
    - [JSDoc Tag Reference](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#JSDoc_Tag_Reference)
    - [JavaScript Types](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#JsTypes)
 
- - We will make use of the following tags:
-   - @const
-   - @constructor
-   - @enum
-   - @fileoverview
-   - @param
-   - @return
-
-## Parting Words
-
-(taken from the Google JavaScript style guide)
-
-*BE CONSISTENT.*
-
-If you're editing code, take a few minutes to look at the code around you and
-determine its style. If they use spaces around all their arithmetic operators,
-you should too. If their comments have little boxes of hash marks around them,
-make your comments have little boxes of hash marks around them too.
-
-The point of having style guidelines is to have a common vocabulary of coding
-so people can concentrate on what you're saying rather than on how you're
-saying it. We present global style rules here so people know the vocabulary,
-but local style is also important. If code you add to a file looks drastically
-different from the existing code around it, it throws readers out of their
-rhythm when they go to read it. Avoid this.
+ - Se utilizarán los siguientes tags:
+   - `@const`
+   - `@constructor`
+   - `@enum`
+   - `@param`
+   - `@return`
