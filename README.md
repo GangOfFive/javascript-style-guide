@@ -26,7 +26,7 @@ Basado en los estándares de [Google](http://google-styleguide.googlecode.com/sv
 y [Airbnb](https://github.com/airbnb/javascript/).
 
 ## Nombres
- - Los archivos de JavaScript se deberán nombrar de la siguiente manera:
+ - Los archivos de JavaScript se deberán con minúsculas y las palabras separadas por guiones:
    - `elephant.js`
    - `favorite-movies.js`
  - Ser descriptivo con los nombres.
@@ -117,7 +117,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
     var pet = 'dog';
     ~~~
 
- - Utilizar solo un `bar` para declarar múltiples variables, una en cada línea.
+ - Utilizar solo un `var` para declarar múltiples variables, una en cada línea.
 
     ~~~javascript
     // No recomendado
