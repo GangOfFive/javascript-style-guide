@@ -434,6 +434,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
 
 ### Comas
  - No colocar las comas antes cuando se listan variables.
+
     ~~~javascript
     // No recomendado
     var one
