@@ -26,7 +26,7 @@ Basado en los estándares de [Google](http://google-styleguide.googlecode.com/sv
 y [Airbnb](https://github.com/airbnb/javascript/).
 
 ## Nombres
- - Los archivos de JavaScript se deberán con minúsculas y las palabras separadas por guiones:
+ - Los archivos de JavaScript se deberán nombrar con minúsculas y las palabras separadas por guiones:
    - `elephant.js`
    - `favorite-movies.js`
  - Ser descriptivo con los nombres.
