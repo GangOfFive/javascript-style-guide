@@ -226,7 +226,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
     })();
     ~~~
 
- - Nunca declarar una función en un bloque no sea una función (`if`, `while`, etc).
+ - Nunca declarar una función en un bloque que no sea una función (`if`, `while`, etc).
    En vez, asignar una función a una variable.
 
     ~~~javascript
