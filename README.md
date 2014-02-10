@@ -7,7 +7,7 @@
 	- [Arreglos](#arreglos)
 	- [Strings](#strings)
 	- [Funciones](#funciones)
-	- [Propiedades](#propiedades)
+	- [Propiedades](#propiedades)el
 	- [Modificar prototipos de objetos del lenguaje](#modificar-prototipos-de-objetos-del-lenguaje)
 	- [Expresiones condicionales y comparaciones](#expresiones-condicionales-y-comparaciones)
 	- [Formato del código](#formato-del-c%C3%B3digo)
@@ -154,7 +154,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
     ~~~
 
 ## Objetos
- - Utilizar el siguiente sintaxis para declarar objetos:
+ - Utilizar la siguiente sintaxis para declarar objetos:
 
     ~~~javascript
     // No recomendado
@@ -165,7 +165,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
     ~~~
 
 ## Arreglos
- - Utilizar el siguiente sintaxis para declarar arreglos:
+ - Utilizar la siguiente sintaxis para declarar arreglos:
 
     ~~~javascript
     // No recomendado
