@@ -311,7 +311,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
     ~~~
 
 ## Formato del código
- - Longitud máxima de líneas: `80`. Si no es posible utilizar menos de 80 carácteres, intentar
+ - Longitud máxima de líneas: `80`. Si no es posible utilizar menos de 80 caracteres, intentar
    al menos utilizar menos de `120`.
 
 ### Inicializar objetos y arreglos
@@ -326,12 +326,11 @@ y [Airbnb](https://github.com/airbnb/javascript/).
 
 ### Argumentos de funciones
  - Siempre que sea posible, los argumentos de una función se deberán listar en la misma
-   línea. Si se excede el límte de 80 caracteres, los argumentos se deberán formatear
+   línea. Si se excede el límite de 80 caracteres, los argumentos se deberán formatear
    de tal manera que sean legibles. Los siguientes ejemplos son aceptables:
 
     ~~~javascript
-    // Four-space, wrap at 80.  Works with very long function names, survives
-    // renaming without reindenting, low on space.
+
     var doThingThatIsVeryDifficultToExplain = function(
         veryDescriptiveArgumentNumberOne,
         veryDescriptiveArgumentTwo,
@@ -339,8 +338,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
         artichokeDescriptorAdapterIterator) {
       // ...
     };
-    // Parenthesis-aligned, one argument per line.  Emphasizes each
-    // individual argument.
+
     function bar(veryDescriptiveArgumentNumberOne,
                  veryDescriptiveArgumentTwo,
                  tableModelEventHandlerProxy,
@@ -466,7 +464,7 @@ y [Airbnb](https://github.com/airbnb/javascript/).
     ~~~
 
 ### Punto y coma
-  - **Si**. Evitar omitir puntos y comas.
+  - **Sí**. Evitar omitir puntos y comas.
 
     ~~~javascript
     // No recomendado
