@@ -7,7 +7,7 @@
 	- [Arreglos](#arreglos)
 	- [Strings](#strings)
 	- [Funciones](#funciones)
-	- [Propiedades](#propiedades)el
+	- [Propiedades](#propiedades)
 	- [Modificar prototipos de objetos del lenguaje](#modificar-prototipos-de-objetos-del-lenguaje)
 	- [Expresiones condicionales y comparaciones](#expresiones-condicionales-y-comparaciones)
 	- [Formato del código](#formato-del-c%C3%B3digo)
